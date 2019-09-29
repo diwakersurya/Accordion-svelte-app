@@ -8,6 +8,9 @@ jobs:
     - name: checkout
       id: checkout
       uses: actions/checkout@master
+    - name: npmi
+      id: npmi
+      run: npm install
     - name: npmrun
       id: npmrun
       run: npm run start
