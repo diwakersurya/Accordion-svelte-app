@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: test job for lighthours
     steps:
-     - name: checkout
+    - name: checkout
       id: checkout
       uses: actions/checkout@master
     - name: Lighthouse step
