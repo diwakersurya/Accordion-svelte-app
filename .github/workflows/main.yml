@@ -11,9 +11,6 @@ jobs:
     - name: npmi
       id: npmi
       run: npm install
-    - name: npmrun
-      id: npmrun
-      run: npm run start
     - name: Lighthouse step
       id: hello
       uses: diwakersurya/lh-action@master
