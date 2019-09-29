@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Lighthouse step
       id: hello
-      uses: diwakersurya/lh-action
+      uses: diwakersurya/lh-action@master
       with:
         who-to-greet: 'Mona the Octocat'
     # Use the output from the `hello` step
