@@ -9,7 +9,7 @@ jobs:
       id: hello
       uses: diwakersurya/lh-action
       with:
-        who-to-greet: 'Mona the Octocat'
+        command: 'npm run dev'
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
