@@ -5,11 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     name: test job for lighthours
     steps:
+    - name: checkout
+      id: checkout
+      uses: actions/checkout@master
     - name: Lighthouse step
       id: hello
-      uses: diwakersurya/lh-action
+      uses: diwakersurya/lh-action@master
       with:
         command: 'npm run dev'
     # Use the output from the `hello` step
     - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      run: echo "The time was ${{ steps.hello.outputs.time }}" 
