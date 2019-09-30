@@ -13,7 +13,7 @@ jobs:
       run: npm install
     - name: npm install puppeteer
       id: npmip
-      run: npm install puppeteer
+      run: npm install -g puppeteer
     - name: lighthouse step
       id: lighthouse
       uses: diwakersurya/lh-action@master
