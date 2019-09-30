@@ -1,21 +1,22 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  light_house_job:
     runs-on: ubuntu-latest
-    name: test job for lighthours
+    name: run lighthouse to test score
     steps:
     - name: checkout
       id: checkout
       uses: actions/checkout@master
-    - name: npmi
+    - name: npm install
       id: npmi
       run: npm install
-    - name: Lighthouse step
-      id: hello
+    - name: npm install puppeteer
+      id: npmip
+      run: npm install puppeteer
+    - name: lighthouse step
+      id: lighthouse
       uses: diwakersurya/lh-action@master
       with:
         command: 'npm run start'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}" 
+
