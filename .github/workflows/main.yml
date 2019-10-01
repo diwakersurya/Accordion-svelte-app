@@ -18,6 +18,6 @@ jobs:
       id: lighthouse
       uses: diwakersurya/lh-action@master
       with:
-        command: 'npm run start'  
+        command: 'npm run start'   
 
  
