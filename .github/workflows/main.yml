@@ -16,7 +16,7 @@ jobs:
       uses: diwakersurya/lh-action@master
       with:
         command: 'npm run start'
-        url: 'http://localhost:5000'
+        url: 'http://localhost:5000' 
         comment: true 
         resultUrl: 'http://localhost:5000'
 
