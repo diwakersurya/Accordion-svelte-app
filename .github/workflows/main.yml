@@ -14,6 +14,8 @@ jobs:
     - name: lighthouse step
       id: lighthouse
       uses: diwakersurya/lh-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       with:
         command: 'npm run start'
         url: 'http://localhost:5000' 
