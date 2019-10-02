@@ -3,14 +3,11 @@ on: [pull_request]
 jobs:
   light_house_job:
     runs-on: ubuntu-latest
-    name: run lighthouse to test score
+    name: Run Lighthouse to test Score
     steps:
     - name: checkout
       id: checkout
       uses: actions/checkout@master
-      env:
-        ACTIONS_RUNNER_DEBUG: true
-        ACTIONS_STEP_DEBUG: true
     - name: npm install
       id: npmi
       run: npm install
@@ -18,6 +15,8 @@ jobs:
       id: lighthouse
       uses: diwakersurya/lh-action@master
       with:
-        command: 'npm run start'  
+        command: 'npm run start'
+        url: 'http://localhost:5000'
+        comment: true
 
   
