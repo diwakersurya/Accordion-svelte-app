@@ -3,7 +3,7 @@ on: [pull_request]
 jobs:
   light_house_job:
     runs-on: ubuntu-latest
-    name: Run Lighthouse to test Score
+    name: Run Lighthouse to test Score 
     steps:
     - name: checkout
       id: checkout
