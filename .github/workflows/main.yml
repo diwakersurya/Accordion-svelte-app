@@ -20,7 +20,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         command: 'npm run start'
-        url: 'localhost:5000' 
+        url: 'http://localhost:5000' 
         comment: true 
         resultUrl: 'http://localhost:5000'
 
