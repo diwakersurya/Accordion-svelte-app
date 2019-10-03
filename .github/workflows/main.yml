@@ -16,6 +16,7 @@ jobs:
       uses: diwakersurya/lh-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CI: true 
       with:
         command: 'npm run start'
         url: 'http://localhost:5000' 
