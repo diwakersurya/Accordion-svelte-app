@@ -3,6 +3,8 @@ on: [pull_request]
 jobs:
   light_house_job:
     runs-on: ubuntu-latest
+    env:
+      CI: true 
     name: Run Lighthouse to test Score 
     steps:
     - name: checkout
@@ -16,10 +18,9 @@ jobs:
       uses: diwakersurya/lh-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CI: true 
       with:
         command: 'npm run start'
-        url: 'https://public.diwakersurya.now.sh/' 
+        url: 'localhost:5000' 
         comment: true 
         resultUrl: 'http://localhost:5000'
 
