@@ -19,7 +19,7 @@ jobs:
         CI: true 
       with:
         command: 'npm run start'
-        url: 'http://localhost:5000' 
+        url: 'https://public.diwakersurya.now.sh/' 
         comment: true 
         resultUrl: 'http://localhost:5000'
 
