@@ -21,7 +21,7 @@ jobs:
       with:
         command: 'npm run start'
         url: 'http://localhost:5000' 
-        comment: true
+        comment: true 
         resultUrl: 'http://localhost:5000'
 
   
