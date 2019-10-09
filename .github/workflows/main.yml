@@ -3,21 +3,28 @@ on: [pull_request]
 jobs:
   light_house_job:
     runs-on: ubuntu-latest
-    name: run lighthouse to test score
+    env:
+      CI: true 
+    name: Run Lighthouse to test Score 
     steps:
     - name: checkout
       id: checkout
-      uses: actions/checkout@master
-      env:
-        ACTIONS_RUNNER_DEBUG: true
-        ACTIONS_STEP_DEBUG: true
+      uses: actions/checkout@master 
     - name: npm install
       id: npmi
       run: npm install
+    - name: npm build
+      id: npmb
+      run: npm run build
     - name: lighthouse step
       id: lighthouse
       uses: diwakersurya/lh-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        command: 'npm run start' 
+        command: 'npm run start'
+        url: 'http://localhost:5000' 
+        comment: true 
+        resultUrl: 'http://localhost:5000'
 
   
