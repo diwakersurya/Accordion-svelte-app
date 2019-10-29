@@ -1,21 +1,32 @@
+<script context="module">
+  export const ACCORDION = {};
+</script>
+
 <script>
   import { createEventDispatcher, setContext } from "svelte";
   import { writable } from "svelte/store";
-  const accordionStore = writable(null);
   import Section from "./AccordionSection.svelte";
   export let value;
-  accordionStore.set(value);
-  console.log($accordionStore);
-  const isControlled = typeof $accordionStore !== "undefined";
-
   const dispatch = createEventDispatcher();
+
+  $: isControlled = typeof value !== "undefined";
+  const selected = writable(null);
+
+  $: if (isControlled) {
+    selected.set(value);
+  }
+
   const handleChange = function(newValue) {
     if (!isControlled) {
-      value = newValue;
+      selected.set(newValue);
     }
     dispatch("change", newValue);
   };
-  setContext("accordion", { handleChange, accordionStore });
+
+  setContext(ACCORDION, {
+    handleChange,
+    selected
+  });
 </script>
 
 <style>
@@ -25,5 +36,5 @@
 </style>
 
 <ul class="accordion">
-  <slot {value} />
+  <slot />
 </ul>

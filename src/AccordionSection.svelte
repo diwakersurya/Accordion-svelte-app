@@ -5,17 +5,15 @@
     onMount,
     onDestroy
   } from "svelte";
+  import { ACCORDION } from "./Accordion.svelte";
   import { slide } from "svelte/transition";
   import Header from "./AccordionHeader.svelte";
   export let title = "header title";
   export let open = false;
-  let unsubscribe;
-  const { accordionStore, handleChange } = getContext("accordion");
-
-  const isControlled = typeof value !== "undefined";
-
+  const { handleChange, selected } = getContext(ACCORDION);
+  //get selected value from context
+  $: open = $selected === title;
   export let onHeaderClick;
-  const dispatch = createEventDispatcher();
 </script>
 
 <li className="accordion-section">
